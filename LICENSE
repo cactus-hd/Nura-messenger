@@ -1,0 +1,99 @@
+NURA NON-COMMERCIAL LICENSE
+Version 1.0 — 2026-09-10
+
+Copyright (c) 2026 Amirabbas
+
+1. GRANT OF RIGHTS
+
+Subject to the terms of this License, the Copyright Holder grants you a limited,
+non-exclusive, worldwide, royalty-free license to:
+
+- use the Software for personal, educational, research, hobby and other
+  non-commercial purposes;
+- study and inspect the source code;
+- modify, adapt and create derivative works of the Software for non-commercial
+  purposes; and
+- copy and redistribute the Software or modified versions for non-commercial
+  purposes, provided that the copyright notice, this License and attribution
+  remain with the distributed work.
+
+2. NON-COMMERCIAL LIMITATION
+
+You may NOT, without prior written permission from the Copyright Holder, use the
+Software or any substantial part of it for Commercial Purposes.
+
+"Commercial Purposes" includes, but is not limited to:
+
+- selling the Software or a modified version;
+- licensing or sublicensing the Software for compensation;
+- offering the Software as a paid hosted service, SaaS, API or managed service;
+- charging users for access to a service whose core functionality is provided by
+  the Software;
+- monetizing a deployment through advertisements, subscriptions, paid features,
+  sponsorships or other revenue-generating mechanisms;
+- incorporating the Software, or a substantial part of its functionality, into
+  a commercial product or service; or
+- using the Software in a business operation primarily intended to generate
+  revenue from the Software's functionality.
+
+3. COMMERCIAL PERMISSION
+
+Commercial use is not granted by this License.
+
+A person or organization wishing to use the Software for Commercial Purposes
+must obtain prior written permission from the Copyright Holder. Such permission
+may be granted under a separate commercial license and may include fees,
+conditions or additional terms.
+
+4. ATTRIBUTION
+
+Redistributions and derivative works must retain:
+
+- the original copyright notice;
+- the name "Nura Messenger" where reasonably practicable; and
+- a visible reference to this License.
+
+You may not imply that a modified version is an official release of the
+Copyright Holder without permission.
+
+5. NO SUBLICENSING OF COMMERCIAL RIGHTS
+
+You may not grant, transfer or sublicense any commercial rights to the Software
+that you do not possess under this License.
+
+6. NO TRADEMARK GRANT
+
+This License does not grant rights to trademarks, logos, names or other branding
+of the Copyright Holder, including the Nura name or logo, except for the limited
+use reasonably necessary to comply with the attribution requirements above.
+
+7. DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+8. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER SHALL
+NOT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OF THE SOFTWARE.
+
+9. TERMINATION
+
+These rights terminate automatically if you materially breach the terms of this
+License. Upon termination, you must stop the activities not otherwise permitted
+by applicable law.
+
+10. GOVERNING LAW
+
+This License is intended to express the Copyright Holder's conditions on use of
+the Software. To the extent a specific jurisdiction is required, the applicable
+law and competent courts shall be determined separately by the Copyright Holder
+or any commercial licensing agreement.
+
+---
+
+This is a custom source-available license, not an OSI-approved open-source
+license. No commercial rights are granted unless separately authorized in
+writing by the Copyright Holder.

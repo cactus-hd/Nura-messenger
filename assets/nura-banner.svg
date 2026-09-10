@@ -1,0 +1,50 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="40" x2="1140" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16171B"/>
+      <stop offset="0.55" stop-color="#232530"/>
+      <stop offset="1" stop-color="#17181C"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="160" y1="40" x2="980" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAC9DF"/>
+      <stop offset="0.5" stop-color="#FF9FC3"/>
+      <stop offset="1" stop-color="#D98BB0"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="42"/></filter>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-opacity="0.35"/></filter>
+  </defs>
+
+  <rect x="4" y="4" width="1192" height="412" rx="42" fill="url(#bg)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <circle cx="1010" cy="80" r="105" fill="#FAC9DF" fill-opacity="0.20" filter="url(#blur)">
+    <animate attributeName="cx" values="1010;930;1010" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="80;135;80" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="370" r="110" fill="#9F8CFF" fill-opacity="0.12" filter="url(#blur)">
+    <animate attributeName="cx" values="280;340;280" dur="9s" repeatCount="indefinite"/>
+  </circle>
+
+  <g transform="translate(72 68)">
+    <rect x="0" y="0" width="72" height="72" rx="22" fill="url(#pink)" filter="url(#shadow)"/>
+    <path d="M22 30C22 25.582 25.582 22 30 22H42C46.418 22 50 25.582 50 30V36C50 40.418 46.418 44 42 44H34L27 51V44H30C25.582 44 22 40.418 22 36V30Z" fill="#1A1B1F"/>
+  </g>
+
+  <text x="165" y="115" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="-3">Nura</text>
+  <text x="168" y="157" fill="#FAC9DF" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">MESSENGER</text>
+
+  <text x="72" y="228" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700">Messaging, with a little more personality.</text>
+  <text x="72" y="270" fill="#A9ABB4" font-family="Inter, Arial, sans-serif" font-size="20">Expressive profiles · thoughtful motion · familiar chat</text>
+
+  <g transform="translate(72 310)">
+    <rect width="170" height="44" rx="22" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <circle cx="26" cy="22" r="6" fill="#FAC9DF"><animate attributeName="r" values="6;8;6" dur="1.6s" repeatCount="indefinite"/></circle>
+    <text x="45" y="29" fill="#E8E8EC" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600">Liquid Glass UI</text>
+
+    <rect x="184" width="170" height="44" rx="22" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <circle cx="210" cy="22" r="6" fill="#FAC9DF"><animate attributeName="r" values="6;8;6" dur="1.9s" repeatCount="indefinite"/></circle>
+    <text x="229" y="29" fill="#E8E8EC" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600">PHP + SQLite</text>
+
+    <rect x="368" width="190" height="44" rx="22" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <circle cx="394" cy="22" r="6" fill="#FAC9DF"><animate attributeName="r" values="6;8;6" dur="2.2s" repeatCount="indefinite"/></circle>
+    <text x="413" y="29" fill="#E8E8EC" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600">XAMPP friendly</text>
+  </g>
+</svg>

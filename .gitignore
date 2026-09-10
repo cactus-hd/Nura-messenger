@@ -1,0 +1,24 @@
+# Runtime database
+*.sqlite
+*.sqlite3
+*.db
+
+# Runtime uploads
+uploads/*
+!uploads/.gitkeep
+
+# Local / editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS / temporary
+node_modules/
+npm-debug.log*
