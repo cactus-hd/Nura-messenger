@@ -4,18 +4,19 @@
 
 # Nura Messenger
 
-### A soft, expressive, privacy-minded messenger UI built for the web.
+### A soft, expressive, self-hosted messenger built with TypeScript, PHP and SQLite.
 
 <p>
   <strong>WhatsApp-like messaging.</strong><br/>
   <strong>Telegram-inspired interaction.</strong><br/>
-  <strong>Apple-style motion + restrained Liquid Glass.</strong>
+  <strong>Apple-inspired motion + restrained Liquid Glass.</strong>
 </p>
 
-[![Platform](https://img.shields.io/badge/platform-XAMPP%20%7C%20PHP%20%7C%20SQLite-1a1b1f?style=for-the-badge)](#)
-[![Frontend](https://img.shields.io/badge/frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-fac9df?style=for-the-badge&labelColor=1a1b1f)](#)
-[![Backend](https://img.shields.io/badge/backend-PHP-777BB4?style=for-the-badge&labelColor=1a1b1f)](#)
-[![Database](https://img.shields.io/badge/database-SQLite-003B57?style=for-the-badge&labelColor=1a1b1f)](#)
+[![Release](https://img.shields.io/badge/release-v0.2.0-fac9df?style=for-the-badge&labelColor=1a1b1f)](../../releases)
+[![Frontend](https://img.shields.io/badge/frontend-TypeScript%20%2B%20HTML%20%2B%20CSS-3178C6?style=for-the-badge&labelColor=1a1b1f)](#-architecture)
+[![Backend](https://img.shields.io/badge/backend-PHP-777BB4?style=for-the-badge&labelColor=1a1b1f)](#-backend)
+[![Database](https://img.shields.io/badge/database-SQLite-003B57?style=for-the-badge&labelColor=1a1b1f)](#-backend)
+[![Runtime](https://img.shields.io/badge/runtime-XAMPP%20%7C%20Apache-E44D26?style=for-the-badge&labelColor=1a1b1f)](#-run-locally)
 [![License](https://img.shields.io/badge/license-Nura%20Non--Commercial-EA4AAA?style=for-the-badge&labelColor=1a1b1f)](LICENSE)
 
 > **Nura is an experimental, self-hostable messenger project focused on expressive conversations, beautiful profiles, soft motion, and a more human-feeling chat experience.**
@@ -27,18 +28,16 @@
 ## ✦ Why Nura?
 
 Most messenger interfaces are optimized for utility first and personality second.
-Nura takes a different direction: keep messaging fast and familiar, then give the product enough warmth to feel like a place rather than a utility.
-
-Think of it as:
+Nura keeps the familiar messaging model, then adds a warmer visual language, expressive profiles, micro-interactions, and a more editorial feel.
 
 | Familiar | Nura's twist |
 |---|---|
 | 💬 Private chats | 🌸 Softer, more expressive visual language |
-| 👤 Profiles | 🖼️ Custom avatar + cover with crop positioning |
+| 👤 Profiles | 🖼️ Custom avatar, cover, bio and social links |
 | 📨 Messaging | ✨ Motion, micro-interactions and playful states |
-| 📎 Attachments | 🎙️ Voice, images and files |
-| 👍 Reactions | 💗 Lightweight social interaction |
-| 📱 Mobile-first | 🍎 Apple-inspired hierarchy + Liquid Glass utility layers |
+| 📎 Attachments | 🎙️ Voice messages, images and files |
+| 💗 Message actions | 📌 Pin, reply, edit, delete and copy |
+| 📱 Mobile-first | 🍎 Apple-inspired hierarchy + restrained Liquid Glass |
 
 ---
 
@@ -51,9 +50,7 @@ Think of it as:
 - Edit your own messages
 - Delete messages
 - Pin / unpin messages
-- Forward messages
 - Copy message text
-- Emoji reactions
 - Emoji picker
 - Voice-message recording
 - Image attachments
@@ -74,11 +71,16 @@ Think of it as:
 - LinkedIn
 - Website
 - Dedicated profile editing flow
-- Separate image handling to avoid the old avatar/banner overlay bug
+- Separate image upload handling
+- Responsive profile layout
 
-### UI / UX
+### Frontend experience
 
-- Mobile-first single-column experience
+- TypeScript frontend with strict compiler settings
+- Modular application architecture
+- Event delegation instead of inline HTML handlers
+- Separate view / feature / core modules
+- Mobile-first single-column messenger UI
 - Soft dark surfaces
 - Nura pink accent
 - Rounded geometry
@@ -87,85 +89,203 @@ Think of it as:
 - Motion-first transitions
 - Touch-friendly controls
 - Reduced-motion support
+- No framework dependency in the frontend
 
 ---
 
 ## 🎨 Design language
 
-Nura's visual identity is built around a small, deliberate palette instead of a large theme system.
+Nura uses a deliberately small palette:
 
 ```text
-Primary pink   #FAC9DF
-Deep background #1A1B1F
-Surface         #232530
-White           #FFFFFF
+Primary pink    #FAC9DF
+Deep background #121318
+Panel           #1D1F27
+Panel alt       #252833
+Primary text    #F7F7F8
+Muted text      #969AA8
 ```
 
-The design deliberately avoids turning every card into glass. Glass is reserved for interaction-heavy layers such as navigation, toolbars and the composer; content remains visually solid and readable.
+The visual system follows one simple rule:
+
+> **Glass belongs to the functional layer, not everything on screen.**
+
+Navigation, toolbars and other interaction-heavy surfaces may use translucency and blur. Message content and primary information remain visually solid and readable.
 
 ### Motion philosophy
 
-Nura uses motion to communicate **state**, not to decorate every interaction.
+Motion communicates state instead of decorating every click.
 
 Examples:
 
-- message entrance → subtle spring / fade
-- action buttons → compressed touch feedback
-- sheet / modal → soft slide-up
-- reaction → tiny scale feedback
-- media editor → focused crop interaction
+- page transitions → soft fade / slide
+- message entrance → subtle spring-like movement
+- buttons → compressed touch feedback
+- menus → quick scale + fade
+- profile media → focused editing flow
+- chat updates → preserve scroll position when possible
 
-> The goal is to make the app feel alive without making it feel noisy.
+The goal is to make Nura feel alive without making it feel noisy.
 
 ---
 
-## 🧱 Project structure
+## 🧱 Architecture
+
+The stable `v0.2.x` frontend is now organized as a TypeScript application instead of a single JavaScript-heavy HTML file.
 
 ```text
 Nura/
-├── index.html          # Main frontend application
-├── api.php             # PHP API + session authentication
-├── setup.php           # Database bootstrap / migration
-├── schema.sql          # SQLite schema
-├── .htaccess           # Apache rules + database protection
-├── uploads/            # Runtime media uploads
-├── database.sqlite     # Local runtime DB (generated by setup.php; ignored by Git)
-├── README.md
-└── LICENSE
+├── index.html
+├── style.css
+├── package.json
+├── tsconfig.json
+│
+├── src/
+│   ├── main.ts
+│   │
+│   ├── core/
+│   │   ├── api.ts
+│   │   ├── dom.ts
+│   │   ├── events.ts
+│   │   ├── state.ts
+│   │   ├── types.ts
+│   │   └── utils.ts
+│   │
+│   ├── features/
+│   │   ├── chat.ts
+│   │   └── profile.ts
+│   │
+│   └── views/
+│       ├── auth.ts
+│       ├── chat.ts
+│       ├── layout.ts
+│       └── modals.ts
+│
+├── dist/
+│   └── ... compiled JavaScript output
+│
+├── api.php
+├── setup.php
+├── schema.sql
+├── .htaccess
+├── assets/
+│   ├── logo.png
+│   └── nura-banner.svg
+├── uploads/
+│   └── .gitkeep
+├── LICENSE
+└── COMMERCIAL.md
 ```
+
+### Why this structure?
+
+The TypeScript layer is split into three responsibilities:
+
+**Core**
+
+Shared infrastructure such as API requests, application state, DOM helpers, events, types and utilities.
+
+**Features**
+
+User-facing behavior such as chat actions and profile editing.
+
+**Views**
+
+HTML rendering only. Views describe what the interface looks like; feature modules describe what it does.
+
+This keeps the frontend easier to inspect, extend and review than a single monolithic script.
 
 ---
 
-## 🚀 Run locally with XAMPP
+## 🛠️ Frontend development
 
-### 1. Install XAMPP
+Nura uses the TypeScript compiler directly. There is no bundler or frontend framework in the current stable release.
 
-Enable:
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Type-check
+
+```bash
+npm run check
+```
+
+### Build TypeScript
+
+```bash
+npm run build
+```
+
+The compiler writes browser-ready JavaScript into:
+
+```text
+/dist
+```
+
+### Watch mode
+
+```bash
+npm run watch
+```
+
+> `index.html` loads `dist/main.js`, so run `npm run build` after changing TypeScript source files.
+
+---
+
+## 🖥️ Run locally with XAMPP
+
+### Requirements
+
+Install XAMPP with:
 
 - Apache
 - PHP
 - PDO SQLite
 - SQLite3
 
-### 2. Put Nura inside `htdocs`
+You also need Node.js + npm when you want to rebuild the TypeScript frontend.
+
+### 1. Put the project in htdocs
 
 ```text
 C:\xampp\htdocs\Nura
 ```
 
+### 2. Build the frontend
+
+Open a terminal inside the project folder:
+
+```bash
+npm install
+npm run build
+```
+
+You only need Node.js for this build step. Apache serves the resulting `dist/` files afterward.
+
 ### 3. Start Apache
 
 Open XAMPP and start **Apache**.
 
-### 4. Initialize the database
+### 4. Initialize SQLite
 
-Visit:
+Open:
 
 ```text
 http://localhost/Nura/setup.php
 ```
 
+Run setup once. This creates or initializes the local `database.sqlite` file.
+
 ### 5. Open Nura
+
+```text
+http://localhost/Nura/
+```
+
+You can also open:
 
 ```text
 http://localhost/Nura/index.html
@@ -178,13 +298,28 @@ username: demo
 password: Nura12345
 ```
 
-> Change or remove the demo account before deploying anywhere public.
+> Change or remove the demo account before any public deployment.
+
+---
+
+## 🔌 Backend
+
+The stable release uses a small PHP API with session-based authentication and SQLite storage.
+
+### Main backend files
+
+- `api.php` — API actions and session handling
+- `setup.php` — database bootstrap / migration
+- `schema.sql` — SQLite schema
+- `.htaccess` — Apache hardening and access rules
+
+The frontend talks to the backend through the same origin, so a standard XAMPP installation does not require CORS configuration.
 
 ---
 
 ## 🔐 Security notes
 
-This project is intended as a self-hosted prototype / development base, not a production-ready secure messaging backend.
+Nura is a self-hosted prototype / development base, not a production-ready end-to-end encrypted messenger backend.
 
 Before public deployment, add at minimum:
 
@@ -193,39 +328,32 @@ Before public deployment, add at minimum:
 - Rate limiting / abuse prevention
 - Stronger upload validation and malware scanning
 - File-size and storage quotas
-- Better session cookie configuration
-- Content security policy
-- Access-control review for every API endpoint
-- Production storage for media
-- WebSockets / SSE instead of periodic polling
+- Secure session cookie configuration
+- Content Security Policy
+- Endpoint-by-endpoint access-control review
+- Production media storage
+- WebSockets / SSE for realtime delivery
 - Backup strategy
 - Logging and monitoring
 
-**Never commit:**
+### Never commit
 
-- passwords
-- API keys
-- private certificates
-- real user data
-- production `database.sqlite`
-- runtime uploads
+```text
+passwords
+API keys
+private certificates
+real user data
+runtime uploads
+database.sqlite
+```
 
----
+`database.sqlite` and runtime uploads are ignored by Git. If a local database was already committed to an existing repository, remove it from Git tracking with:
 
-## 🛠️ Development
-
-Nura currently uses a deliberately lightweight stack:
-
-- HTML
-- CSS
-- Vanilla JavaScript
-- PHP
-- SQLite
-- Apache / XAMPP
-
-There is no framework build pipeline required for the current local version.
-
-That makes the project easy to inspect, fork for learning, and extend without needing a large toolchain.
+```bash
+git rm --cached database.sqlite
+git commit -m "remove local runtime database"
+git push
+```
 
 ---
 
@@ -235,11 +363,12 @@ Bug reports, UI ideas, accessibility improvements and non-commercial development
 
 Before opening a pull request:
 
-1. Test the change on XAMPP.
-2. Explain what changed and why.
-3. Keep the existing Nura visual language intact.
-4. Do not add external tracking, hidden telemetry or monetization.
-5. Do not include secrets or personal data.
+1. Run `npm run check`.
+2. Run `npm run build`.
+3. Test the backend on XAMPP.
+4. Keep the existing Nura visual language intact.
+5. Do not add hidden telemetry, tracking or monetization.
+6. Do not commit secrets or personal data.
 
 By contributing, you agree that your contribution may be distributed as part of Nura under the project's then-current license.
 
@@ -247,11 +376,11 @@ By contributing, you agree that your contribution may be distributed as part of 
 
 ## 📜 License
 
-Nura is **not MIT licensed** and is **not an unrestricted open-source commercial license**.
+Nura is **not MIT licensed** and is **not an unrestricted commercial open-source project**.
 
 The repository includes a custom **Nura Non-Commercial License**.
 
-You may use, study, modify and develop the project for personal, educational, research and other non-commercial purposes, subject to the license terms.
+You may use, study, modify and develop the project for personal, educational, research and other non-commercial purposes, subject to the full license terms.
 
 Commercial use requires prior written permission from the copyright holder.
 
@@ -265,7 +394,21 @@ Commercial use includes, without limitation:
 
 See [`LICENSE`](LICENSE) for the complete terms.
 
-For commercial licensing / permission requests, contact the copyright holder through the contact information provided in the repository owner profile.
+For commercial licensing / permission requests, contact the copyright holder through the repository owner's contact information.
+
+---
+
+## 🧭 Versioning
+
+The public stable line is currently:
+
+```text
+v0.2.x
+```
+
+This README documents the stable TypeScript refactor and the PHP + SQLite backend associated with that release line.
+
+Experimental / unstable work is intentionally kept outside the stable release documentation.
 
 ---
 

@@ -1,0 +1,14 @@
+{
+  "name": "nura-messenger-frontend",
+  "version": "0.2.1",
+  "private": true,
+  "description": "TypeScript frontend for Nura Messenger v0.2.x",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc --noEmit -p tsconfig.json",
+    "watch": "tsc -w -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
