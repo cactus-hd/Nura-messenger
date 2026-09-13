@@ -69,22 +69,6 @@ Nura keeps the familiar messaging model, then adds a warmer visual language, exp
 - Separate image upload handling
 - Responsive profile layout
 
-### Frontend experience
-
-- TypeScript frontend with strict compiler settings
-- Modular application architecture
-- Event delegation instead of inline HTML handlers
-- Separate view / feature / core modules
-- Mobile-first single-column messenger UI
-- Soft dark surfaces
-- Nura pink accent
-- Rounded geometry
-- Restrained Liquid Glass
-- Floating navigation
-- Motion-first transitions
-- Touch-friendly controls
-- Reduced-motion support
-- No framework dependency in the frontend
 
 ---
 
@@ -417,7 +401,7 @@ Experimental / unstable work is intentionally kept outside the stable release do
 
 ## ⭐ Support the project
 
-If Nura helps you learn, prototype or build something non-commercial, starring the repository is a simple way to support the project.
+If Nura helps you learn, prototype or build something non-commercial, starring the repository is a simple way to support the project  .
 
 <div align="center">
 
