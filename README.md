@@ -401,7 +401,7 @@ Experimental / unstable work is intentionally kept outside the stable release do
 
 ## ⭐ Support the project
 
-If Nura helps you learn, prototype or build something non-commercial, starring the repository is a simple way to support the project  .
+If Nura helps you learn, prototype or build something non-commercial, starring the repository is a simple way to support the project ⭐ .
 
 <div align="center">
 
