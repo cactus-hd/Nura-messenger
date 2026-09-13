@@ -6,11 +6,6 @@
 
 ### A soft, expressive, self-hosted messenger built with TypeScript, PHP and SQLite.
 
-<p>
-  <strong>WhatsApp-like messaging.</strong><br/>
-  <strong>Telegram-inspired interaction.</strong><br/>
-  <strong>Apple-inspired motion + restrained Liquid Glass.</strong>
-</p>
 
 [![Release](https://img.shields.io/badge/release-v0.2.0-fac9df?style=for-the-badge&labelColor=1a1b1f)](../../releases)
 [![Frontend](https://img.shields.io/badge/frontend-TypeScript%20%2B%20HTML%20%2B%20CSS-3178C6?style=for-the-badge&labelColor=1a1b1f)](#-architecture)
