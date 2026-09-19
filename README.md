@@ -14,7 +14,7 @@
 [![Runtime](https://img.shields.io/badge/runtime-XAMPP%20%7C%20Apache-E44D26?style=for-the-badge&labelColor=1a1b1f)](#-run-locally)
 [![License](https://img.shields.io/badge/license-Nura%20Non--Commercial-EA4AAA?style=for-the-badge&labelColor=1a1b1f)](LICENSE)
 
-> **Nura is an experimental, self-hostable messenger project focused on expressive conversations, beautiful profiles, soft motion, and a more human-feeling chat experience.**
+> **Nura is an experimental, self-hostable messenger project focused on expressive conversations, profiles, soft motion, and a more human-feeling chat experience.**
 
 </div>
 
