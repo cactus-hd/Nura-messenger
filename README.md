@@ -393,7 +393,7 @@ Experimental / unstable work is intentionally kept outside the stable release do
 
 ## 💬 Philosophy
 
-> **Messaging should feel personal.**
+> **Messaging should feel personal .**
 >
 > Nura is an attempt to combine the familiarity of a messenger with the warmth of a social product — without sacrificing clarity, speed or simplicity.
 
