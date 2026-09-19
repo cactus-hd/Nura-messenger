@@ -32,7 +32,7 @@ Nura keeps the familiar messaging model, then adds a warmer visual language, exp
 | 📨 Messaging | ✨ Motion, micro-interactions and playful states |
 | 📎 Attachments | 🎙️ Voice messages, images and files |
 | 💗 Message actions | 📌 Pin, reply, edit, delete and copy |
-| 📱 Mobile-first | 🍎 Apple-inspired hierarchy + restrained Liquid Glass |
+
 
 ---
 
