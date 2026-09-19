@@ -4,7 +4,7 @@
 
 # Nura Messenger
 
-### A soft, expressive, self-hosted messenger built with TypeScript, PHP and SQLite.
+### A soft, expressive messenger built with TypeScript, PHP and SQLite.
 
 
 [![Release](https://img.shields.io/badge/release-v0.2.0-fac9df?style=for-the-badge&labelColor=1a1b1f)](../../releases)
